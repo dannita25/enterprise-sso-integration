@@ -50,46 +50,34 @@ The main objective was to simplify authentication for enterprise customers by gi
 1. Integration with Existing Authentication Systems
 Introducing a new SSO solution into an existing pletform required maintaining compatibility with the previous authentication approaches during the transition without disrupting existing functionality.
 
-2. Identity Claims and Role Management
+2. Identity Claims, Roles and API Compatibility
 Retrieving user roles and ensuring that identity claims could be correctly interpreted by the existing backend was another challenge. This involved investigating token claims, additional API calls, and how role information could be used during the authorisation process.
 
-3. Backend Integration and API Compatibility
 Integrating ZITADEL with the existing backend required understanding how the different APIs could communicate and exchange information. This involved identifying compatibility issues, adapting integration approaches, and esnuring that the necessary authentication information could be processed correctly.
 
-4. Third-Party Identity Provider Integration
-Supporting external identity providers introduced challenges related to configuration and compatibility. Different providers required testing and troubleshooting to ensure that enterprise users could authenticate through their existing identity systems.
-
-5. API Deprecation and Long-Term Compatibility
+3. API Deprecation and Long-Term Compatibility
 During development, I identified that one of the ZITADEL API endpoints used to retrieve user roles had been deprecated. I investigated the recommended alternatives and updated the integration to use the newer ListAuthorizations API, helping maintain compatibility with future ZITADEL updates and reducing the risk of relying on outdated functionality.
 
-6. Email delivery and SMTP Integration
+4. Email delivery and SMTP Integration
 Configuring email delivery through ZITADEL introduced unexpected challenges during the integration. I investigated the existing email setup across different platforms to identify the appropriate configuration and help resolve an issue that was blocking progress. Working with my supervisor, we identified and addressed a potential email delivery issue, allowing us to complete the SMTP integration, test invitation emails, and customise their branding for the SSO experience.
 
+5. Identity Provider Configuration and Security Recommendations
+One of the final challenges was determining which configuration settings would be most appropriate and secure for enterprise customers using their existing identity providers. We configured an identity provider, created test users, and extensively tested different settings with the integrated SSO solution to evaluate their impact on security and user experience. After reviewing the results and discussing our findings with senior developers and management, we agreed on a set of recommended configuration practices to include in the customer documentation.
  
-# Authentication and Authorisation
-One of the key challenges was understanding how authenticated identities could be associated with the appropriate accounts and permissions.
-
-This involved working with authentication tokens, identity claims and role-based access control concepts.
-
-# Integration with Existing Systems
-
-Introducing a new authentication solution into an established platform required careful consideration of compatibility and migration.
-
-The aim was to support new authentication capabilities while maintaining continuity for existing users.
-
-# Performance and Reliability
-
-The integration also introduced considerations around backend communication, efficient account management and service reliability.
-
-These challenges required evaluating potential performance implications and investigating ways to minimise unnecessary processing.
-
-# Security and User Experience
-
-This involved considering secure token management, access permissions, and authentication flows that would provide a straightforward experience for users and administrators without compromising security.
-
 # Lessons Learned
+1. The Vaue of Curiosity and Initiavtive
+Something I've learned from working on different projects is the value of following my curiosity and exploring ideas beyond immediate requirements.
 
-To be completed.
+Sometimes, taking a little extra time to investigate a technology or a possible approach can become unexpectedly useful later on.
+
+This happened with Terraform during the SSO project. Having explored its capabilities earlier, I was able to apply that knowledge when we needed an infrastructure provisioning solution under time pressure.
+
+This experience reinforced something I had already started learning from previous projects: following an idea a little further can make a real difference when unexpected challenges arise.
+
+2. Learning Through Challenging Conversations
+One of the most valuable lessons I learned was to become more comfortable with challenging technical discussions. Even when I arrived at meetings well-prepared, conversations with senior developers often introduced concepts beyond my experience. Although uncomfortable at times, these moments became some of my greatest learning opportunities.
+
+Over time, I gained confidence in sharing my observations, asking questions, and contributing ideas based on my research and testing. I learned that growth often comes from being willing to engage in discussions where I don't have all the answers, staying curious, and being open to feedback.
 
 ## Confidentiality
 This repository provides an overview of my professional contributions and the technical concepts explored during the project.
