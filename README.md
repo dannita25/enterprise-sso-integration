@@ -1,5 +1,5 @@
 # Enterprise Single Sign-On (SSO) Solution
-Identity & Access Management | Authentication & Authorisation | Software Engineering
+### Identity & Access Management | Authentication & Authorisation | Software Engineering
 Case study covering identity federation and access management.
 
 ## Project Overview
