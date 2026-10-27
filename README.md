@@ -8,36 +8,89 @@ The main objective was to simplify authentication for enterprise customers by gi
 
 
 ## Technologies and Concepts
-- Identity Management Interface and third party provider: ZITADEL
+- Identity Management: ZITADEL
 - Authentication OpenID Connect (OIDC), OAuth 2.0
-- Backend Development: Golang
+- Backend Development: Go (Golang=
 - Infrastructure as Code: Terraform
-- Security: PKCE, JWT token validation, role-based access control (RBAC)
-- Architecture: Identity Federation,multi-tenant access management
-- Database: AWS
+- Security: PKCE, JWT validation, Role-Based Access Control (RBAC)
+- Architecture: Identity Federation, Multi-Tenant Access Management
+- Cloud Infrastructure: AWS
 
 ## My Contributions
-- Evaluating ZITADEL documentation to decide whether it worked for our current backend and could blend within our current PPAT system.
-- Build a proposal on how to implement the base that will handle ans sustain the whole code.
-- Tried out the ZITADEL Go SDK example, in our backend system, in order to return an http request with a token with claims that our backend can handle.
-- Identified the main issue that con interfere with the implementation and implement a solution for that.
-- Worked on the first code draft with all the key pieces and tested it.
-- Displayed a first demo to company supervisors
-- Troubleshoot compatibility issues and noted future possible issues, facing customer experience and customer security.
-- Build a Terraform solution, to serve as a template for Testing, Staging and Deployment Instances
-- Build a Test Plan for teh different parts of the project, CLI, Admin Service connected to ZITADEL and Terraform.
-- Tested the whole flow on the Test and Staging Instances.
-- Debug final configuration issues ofr thid arty authentciation with specific Customer Identity Providers 
-- Build internal step-by-step documentation for final product delivery
+1. Research and Technical Evaluation
+- Evaluated ZITADEL's capabilities and documentation to assess its compatibility with the existing backend and authentication requirements.
+- Investigated possible integration approaches, considering implementation complexity, maintainability and compatibility with existing functionality.
+- Explored the ZITADEL Go SDK and developed initial proof-of-concept integrations to understand authentication flows and token handling.
+- Identified potential technical challenges and investigated approaches to address them.
+- Worked on request signature validation to support secure communication between ZITADEL Actions and backend services.
+
+2. Architecture and Initial Development
+- Contributed to the initial technical design and proposed an implementation approach for the integration.
+- Developed and tested an early prototype to validate key components and authentication concepts.
+- Presented an initial demonstration to comany supervisors and discussed technical findings.
+- Investigated compatibility issues and considered potential implications for security and customer experience.
+
+3. Infrastructure and Configuration
+- Developed Terraform configurations to support consistent environment provisioning.
+- Worked on identity management configuration and integration testing across development and staging environments.
+- Investigated configuration issues affecting federated authentcation with external identity providers.
+
+4. Testing and Troubleshooting
+- Created a test plan covering authentication flows, backend integration, infrastructure provisioning and CLI authentication.
+- Performed integration and end-to-end testing across test and staging environments.
+- Investigated and debugged authentication, configuration and compatibility issues.
+- Collaborated with other developers to validate the behaviour of the solution.
+
+5. Technical Documentation
+- Produced internal step-by-step technical documentation to support the integration of the solution and fina delivery.
+- Documented code changes and contributed to the deployment documentation.
+- Documented configuration requirements, testing procedures and relevant considerations.
 
 ## Technical Challenges
-- Securly attach token claims, and find the user roles for all of the company roles
-- Map and connect Zitadel APIs to Approov endpoints
-- Investigated performance considerations related to account management and backend communications.
-- Maintain compatibility with old service for migration of old service giving the option to unable or disable the new SSO solution
-- Email delivery and test round to check all emails were delivered correctly and if not throw an issue
-- Find the right set of ocnfiguration for maintaining user credentials private and secure for reduce attack possibilities
-- 
+1. Integration with Existing Authentication Systems
+Introducing a new SSO solution into an existing pletform required maintaining compatibility with the previous authentication approaches during the transition without disrupting existing functionality.
+
+2. Identity Claims and Role Management
+Retrieving user roles and ensuring that identity claims could be correctly interpreted by the existing backend was another challenge. This involved investigating token claims, additional API calls, and how role information could be used during the authorisation process.
+
+3. Backend Integration and API Compatibility
+Integrating ZITADEL with the existing backend required understanding how the different APIs could communicate and exchange information. This involved identifying compatibility issues, adapting integration approaches, and esnuring that the necessary authentication information could be processed correctly.
+
+4. Third-Party Identity Provider Integration
+Supporting external identity providers introduced challenges related to configuration and compatibility. Different providers required testing and troubleshooting to ensure that enterprise users could authenticate through their existing identity systems.
+
+5. API Deprecation and Long-Term Compatibility
+During development, I identified that one of the ZITADEL API endpoints used to retrieve user roles had been deprecated. I investigated the recommended alternatives and updated the integration to use the newer ListAuthorizations API, helping maintain compatibility with future ZITADEL updates and reducing the risk of relying on outdated functionality.
+
+6. Email delivery and SMTP Integration
+Configuring email delivery through ZITADEL introduced unexpected challenges during the integration. I investigated the existing email setup across different platforms to identify the appropriate configuration and help resolve an issue that was blocking progress. Working with my supervisor, we identified and addressed a potential email delivery issue, allowing us to complete the SMTP integration, test invitation emails, and customise their branding for the SSO experience.
+
+ 
+# Authentication and Authorisation
+One of the key challenges was understanding how authenticated identities could be associated with the appropriate accounts and permissions.
+
+This involved working with authentication tokens, identity claims and role-based access control concepts.
+
+# Integration with Existing Systems
+
+Introducing a new authentication solution into an established platform required careful consideration of compatibility and migration.
+
+The aim was to support new authentication capabilities while maintaining continuity for existing users.
+
+# Performance and Reliability
+
+The integration also introduced considerations around backend communication, efficient account management and service reliability.
+
+These challenges required evaluating potential performance implications and investigating ways to minimise unnecessary processing.
+
+# Security and User Experience
+
+This involved considering secure token management, access permissions, and authentication flows that would provide a straightforward experience for users and administrators without compromising security.
+
+# Lessons Learned
+
+To be completed.
+
 ## Confidentiality
 This repository provides an overview of my professional contributions and the technical concepts explored during the project.
 
